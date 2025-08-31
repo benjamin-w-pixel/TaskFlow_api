@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: taskflow-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn taskflow.wsgi:application
+    plan: free

@@ -134,3 +134,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
+
+import os
+if 'RENDER' in os.environ:
+    ALLOWED_HOSTS = ['taskflow-api.onrender.com', 'localhost', '127.0.0.1']
+    DEBUG = False
